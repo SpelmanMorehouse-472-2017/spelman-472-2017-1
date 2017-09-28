@@ -24,6 +24,7 @@ Secondary-
 1. Users can create a profile 
 2. Users can recieve notifications
 3. Users can be directed to the links of perspecitive schools
+4. Users can request to be on an institution's mailing list
 
 Technical requirements:
 
@@ -62,10 +63,10 @@ Information about social atmosphere is from a repituble source
 Income level subject to change due to inflation
 
 Constraints:
-
+Information from previous schooling years
 
 Dependencies:
-Information from previous schooling year
+Acuracy of the set of data found
 
 TimeLines an Milestones:
 
