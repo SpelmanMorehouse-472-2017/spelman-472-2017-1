@@ -1,6 +1,6 @@
 User Stories
 
-As a user, I WANT to be able to get recommendations on majors related to my interests, so that I can find majors that most fit my needs
+As a user, I WANT to be able to get recommendations on majors related to my interests, so that I can find majors that most will offer financial stability.
 
 As a user, I WANT to be able to find majors that pay a certain amount, so that I can find majors that fit my financial needs
 
