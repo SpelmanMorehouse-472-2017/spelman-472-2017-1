@@ -2,4 +2,4 @@
 
 College Major Advisor
 
-Based on user interests, hobbies and average income based on major, Major Advisor will suggest majors that closely align with the user's interests. 
+Based on user interests, hobbies and average income based on major, Major Advisor will suggest majors that closely align with the user's needs. 
