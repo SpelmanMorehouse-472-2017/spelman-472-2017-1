@@ -16,14 +16,14 @@ Functional requirements:
 Primary-
 1. Users can view a list of every public and private instution in th U.S
 2. Users can view a list of each major and program that institution has to offer
-3.
-4.
-5.
+3. Users can view the type of school, as sorted by social life and/or emphasis of study
+4. Users can view the location best suited for monetary income
+5. Users can view the salaries of each major, as grouped by experience
 
 Secondary-
 1. Users can create a profile 
 2. Users can recieve notifications
-3.
+3. Users can 
 
 Technical requirements:
 
