@@ -1,33 +1,60 @@
-Typical components of a product requirements document (PRD) are:[citation needed]
 
-College Major Advisor
+Title: Where It Pays To Go To College
 
-Purpose and scope, from both a technical and business perspective
+Authors: Deja Bond, Demetrius King, Julian Hutson, Andrea Richmond
 
-Stakeholder identification
+Stakeholders: Deja Bond (Program Manager), Demetrius King(Hacker), Andrea Richmond (UI developer),Julian Hutson (Test Manager), ALL(Java Programmer)
 
-Market assessment and target demographics- individuals interested in college education
+Project Purpose and Scope:
+The purpose of this project is to provide high school seniors with with a mobile application in which they can learn about which degree or institution will be the financially most rewarding.
 
-Product overview and use cases- recommends college majors that closely fit the user's interests and needs
+Market assessment and target demographics: High School Seniors and/or Juniors
 
-Requirements, including
-functional requirements (e.g. what a product should do)
+Requirements:
+Functional requirements:
 
-usability requirements
+Primary-
+1. Users can view a list of every public and private instution in th U.S
+2. Users can view a list of each major and program that institution has to offer
+3.
+4.
+5.
 
-technical requirements (e.g. security, network, platform, integration, client)
+Secondary-
+1. Users can create a profile 
+2. Users can recieve notifications
+3.
 
-environmental requirements
+Technical requirements:
 
-support requirements
+Primary-
+1. Cross-browser/platform support (Safari, Fireofx, Chrome) (Mac OSX /PC)
+2. Mobile support for smartphones (iPhone, Android)
+3.
 
-interaction requirements (e.g. how the product should work with other systems)
-Assumptions
+Secondary-
+1. Statistics and Reporting
 
-Constraints- amount of data on each major
 
-Dependencies- accuracy of data set
 
-High level workflow plans, timelines and milestones (more detail is defined through a project plan)
 
-Evaluation plan and performance metrics
+Usability requirements
+1. The app will be fully functioning for all browsers
+
+
+Product overview and Use cases:
+
+Environmental requirements:
+
+Support requirements:
+
+Interaction requirements (e.g. how the product should work with other systems):
+
+Assumptions:
+
+Constraints:
+
+Dependencies:
+
+TimeLines an Milestones:
+
