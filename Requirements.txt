@@ -23,14 +23,14 @@ Primary-
 Secondary-
 1. Users can create a profile 
 2. Users can recieve notifications
-3. Users can 
+3. Users can request to be on an institution's mailing list
 
 Technical requirements:
 
 Primary-
 1. Cross-browser/platform support (Safari, Fireofx, Chrome) (Mac OSX /PC)
 2. Mobile support for smartphones (iPhone, Android)
-3.
+
 
 Secondary-
 1. Statistics and Reporting
