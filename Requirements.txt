@@ -31,7 +31,7 @@ Technical requirements:
 Primary-
 1. Cross-browser/platform support (Safari, Fireofx, Chrome) (Mac OSX /PC)
 2. Mobile support for smartphones (iPhone, Android)
-3.
+3. API that has an acceptable level of documentation
 
 Secondary-
 1. Statistics and Reporting
@@ -40,7 +40,7 @@ Secondary-
 
 
 Usability requirements
-1. The app will be fully functioning for all browsers
+1. The website/app will be fully functioning for all browsers
 
 
 Product overview and Use cases:
@@ -51,7 +51,7 @@ Electricty able to power a cellular device with internet capabilities
 Electricty needed to function a 100+W computer
 
 Support requirements:
-A help button will be avaible to guide users to comonly asked questions about the website's use
+A help button will be avaible to guide users to commonly asked questions about the website's use
 Users will be able to report any bug found directly to technical support center
 
 Interaction requirements (e.g. how the product should work with other systems):
@@ -63,10 +63,20 @@ Information about social atmosphere is from a repituble source
 Income level subject to change due to inflation
 
 Constraints:
-Information from previous schooling years
+A large portion of time will be devoted ti installing software, customizaing and implementing the app endine. Have to reserve time for maintenance.
 
 Dependencies:
-Acuracy of the set of data found
+1. The three data sets that will be utilized:Degrees that Pay, Salaries by College, Salaries by Region
+2. Accuracy of the set of data found
 
-TimeLines an Milestones:
+Timelines:
+10/12 Tracking and Testing plan
+10/24 UI design complete
+11/16 Fully operating project
+
+References:
+https://www.kaggle.com/wsj/college-salaries
+
+
+
 
