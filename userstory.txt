@@ -1,4 +1,9 @@
-User Story
+User Stories
+
+As a user, I WANT to be able to get recommendations on majors related to my interests
+As a user, I WANT to be able to find majors that pay a certain amount
+
+/*
 User Name - Sydney Brown
 Topic - Where It Pays To Go To College
 
@@ -7,3 +12,4 @@ Sydney is a high school senior at Riverdale High School in Philadelphia Pennsylv
 While the five year plan is taking place, the district has implemented cut-backs. There has been less resources for students to receive for aiding in the College process. Riverdale HS is down to only one high school counselor. With a senior class size of 565 students, the counselor has little to no time for Sydney. 
 
 Sydney wants to attend college, but with all the news of college graduatings not receiving jobs upon graduation she wants help with choosing a major. 
+*/
