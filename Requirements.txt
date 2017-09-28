@@ -23,14 +23,14 @@ Primary-
 Secondary-
 1. Users can create a profile 
 2. Users can recieve notifications
-3. Users can request to be on an institution's mailing list
+3. Users can be directed to the links of perspecitive schools
 
 Technical requirements:
 
 Primary-
 1. Cross-browser/platform support (Safari, Fireofx, Chrome) (Mac OSX /PC)
 2. Mobile support for smartphones (iPhone, Android)
-
+3.
 
 Secondary-
 1. Statistics and Reporting
@@ -45,16 +45,27 @@ Usability requirements
 Product overview and Use cases:
 
 Environmental requirements:
+Any environment that is capable of sustaining human life
+Electricty able to power a cellular device with internet capabilities
+Electricty needed to function a 100+W computer
 
 Support requirements:
+A help button will be avaible to guide users to comonly asked questions about the website's use
+Users will be able to report any bug found directly to technical support center
 
 Interaction requirements (e.g. how the product should work with other systems):
+Profile information to remain consistent no matter platform
+Landscape and portrain capability (on mobile device)
 
 Assumptions:
+Information about social atmosphere is from a repituble source
+Income level subject to change due to inflation
 
 Constraints:
 
+
 Dependencies:
+Information from previous schooling year
 
 TimeLines an Milestones:
 
