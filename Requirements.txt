@@ -1,19 +1,33 @@
 Typical components of a product requirements document (PRD) are:[citation needed]
 
-Title & author information
+College Major Advisor
+
 Purpose and scope, from both a technical and business perspective
+
 Stakeholder identification
-Market assessment and target demographics
-Product overview and use cases
+
+Market assessment and target demographics- individuals interested in college education
+
+Product overview and use cases- recommends college majors that closely fit the user's interests and needs
+
 Requirements, including
 functional requirements (e.g. what a product should do)
+
 usability requirements
+
 technical requirements (e.g. security, network, platform, integration, client)
+
 environmental requirements
+
 support requirements
+
 interaction requirements (e.g. how the product should work with other systems)
 Assumptions
-Constraints
-Dependencies
+
+Constraints- amount of data on each major
+
+Dependencies- accuracy of data set
+
 High level workflow plans, timelines and milestones (more detail is defined through a project plan)
+
 Evaluation plan and performance metrics
