@@ -1,0 +1,16 @@
+Tracking and Testing Plan
+
+2.
+  A. Define your artifacts?
+  B. Transparently record progress? (i.e. at any point in time, I or any of your teammates should be able to see how far along you are on each artifact.)
+  C. Determine when something is done?
+  D. Decide what each person is working on?
+  E. How will you make sure everyone understands what everyone else is doing enough to jump in and help if necessary?
+  F. How and how often will you evaluate your progress and reassess your plan?
+ 
+3.
+  Determine a test plan.
+ A. It's not usually the role of a test plan to discuss unit testing, but you do need to determine and provide your process for handling unit tests.  Who will be responsible for verifying that all code is unit tested?  How often will the unit tests be verified?
+ B. How will integration points be tested?  How will you make sure the java code can talk to the database?  How will you make sure the client can talk to the java code?
+ C. What functionality of the service as a whole will you verify?  How will you verify it?  Who will do the verification?  How often?
+
