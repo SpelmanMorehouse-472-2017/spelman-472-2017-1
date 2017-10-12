@@ -8,7 +8,7 @@ Tracking and Testing Plan
   The progress of completion for each artifact shall be updated each time a team member contributes to an artifact. Each artifact will encompass their own set of tasks. The number of completed tasks shall represent the overrall completetion percentage of that artifact. Thus, project progress will be transparent to the team members.
   
   C. Determine when something is done?
-We will determine that something is done when it is functional and there is a product that is releasable. The person performing the work and the person accepting the work have this common definition of done.
+ We will determine that something is done when it is functional and there is a product that is releasable. The person performing the work and the person accepting the work have this common definition of done.
   D. Decide what each person is working on?
 Based on the roles within the team, team members will take on tasks during each sprint that are related to their role. The scrum master will get an assessment of the skill set of each team member and make sure that tasks are assigned accordingly.
   E. How will you make sure everyone understands what everyone else is doing enough to jump in and help if necessary?
