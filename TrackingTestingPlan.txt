@@ -23,7 +23,7 @@ In order to keep all team members aware of all aspects of project development we
 
   F. How and how often will you evaluate your progress and reassess your plan?
   
-  During ouwr weekly meetings, our process will be ealuted and plan will be reassses based on the needs of the user for the app engine. Our progress is tested by the success of our individual and integrated testing.
+  During our weekly meetings, our process will be ealuted and plan will be reassses based on the needs of the user for the app engine. Our progress is tested by the success of our individual and integrated testing.
  
 3.
   Determine a test plan.
@@ -38,3 +38,4 @@ In order to keep all team members aware of all aspects of project development we
  
  C. What functionality of the service as a whole will you verify?  How will you verify it?  Who will do the verification?  How often?
 
+Services to be verified  include making sure that data found in the students profile remains its integrity when that information is sent to colleges. This would be verified by making sure that the user's profile information that is pulled from the college's side matches the data displayed on the user profile. This will be tested in initial phases of the project.  The system will also verify that the data received by the student is consistent when a major update to the system is made such as adding another qualifier (category) for the college's categories.  Most testing or verification by the test manager and/or hacker in the group. 
