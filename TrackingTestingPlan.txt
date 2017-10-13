@@ -11,11 +11,11 @@ Tracking and Testing Plan
   
   C. Determine when something is done? (WHAT MEATHOD WILL YOU USE  TO MAKE THAT HAPPEN?)
   
- We will determine that something is done when it is functional and there is a product that is releasable. The person performing the work and the person accepting the work have this common definition of done.
+ We will determine that something is done when it is functional and there is a product that is releasable. The person performing the work and the person accepting the work have this common definition of done. Team members will discuss their progress on their tasks during daily standup. If a team member is blocked on their task during the sprint other team members will jump in and make sure the task will be completed during the sprint.
  
   D. Decide what each person is working on? (I THINK! THIS MIGHT BE GOOD, WILL DOUBLE CHECK. DECIDE HOW)
   
-Based on the roles within the team, team members will take on tasks during each sprint that are related to their role. The scrum master will get an assessment of the skill set of each team member and make sure that tasks are assigned accordingly.
+Based on the roles within the team, team members will take on tasks during each sprint that are related to their role. The scrum master will get an assessment of the skill set of each team member and make sure that tasks are assigned accordingly. Team members will accept a task that they believe they can complete during the sprint.
 
   E. How will you make sure everyone understands what everyone else is doing enough to jump in and help if necessary? (THIS SHOULD BE NOTED IN SOME WAY IN THE TRANSPERANCY DOC)
   
