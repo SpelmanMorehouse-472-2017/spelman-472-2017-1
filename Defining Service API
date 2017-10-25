@@ -1,0 +1,106 @@
+Defining the Service AP1
+Pages for FLINDER
+
+1. Login Page
+2. Sign Up Page
+3. Profile Page
+
+public class ProfileForm {
+    
+    private String city;
+    private String state;
+    private String major;
+    private String institution;
+    private String startdate;
+
+    private ProfileForm () {}
+
+    /**
+     * Constructor for ProfileForm, solely for unit test.
+     * @param displayName A String for displaying the user on this system.
+
+     */
+    public ProfileForm(String displayName, String city, String state, String major, String institution, String startdate) {
+        this.displayName = displayName;
+        this.city = city;
+        this.state = state;
+        this.major = major;
+        this.institution = institution;
+        this.startdate = startdate;
+    }
+
+    public String getDisplayName() {
+        return displayName;
+    }
+
+    public String getCity() {
+        return city;
+    }
+    public String getState() {
+        return state;
+    }
+    public String getMajor() {
+        return major;
+    }
+    public String getInstitution() {
+        return institution;
+    }
+    public String getStartdate() {
+        return startdate;
+    }
+
+    
+}
+
+//To get the profile
+  @ApiMethod(name = "getProfile", path = "profile", httpMethod = HttpMethod.GET)
+    public Profile getProfile(final User user) throws UnauthorizedException {
+        if (user == null) {
+            throw new UnauthorizedException("Authorization required");
+        }
+        return ofy().load().key(Key.create(Profile.class, getUserId(user))).now();
+    }
+    
+ //To save the profile
+    @ApiMethod(name = "saveProfile", path = "profile", httpMethod = HttpMethod.POST)
+    public Profile saveProfile(final User user, final ProfileForm profileForm)
+            throws UnauthorizedException {
+        if (user == null) {
+            throw new UnauthorizedException("Authorization required");
+        }
+        String displayName = profileForm.getDisplayName();
+        String city = profileForm.getCity();
+        String state = profileForm.getState();
+        String major = profileForm.getMajor();
+        String institution = profileForm.getInstitution();
+        String startdate = profileForm.getStartdate();
+       
+        Profile profile = ofy().load().key(Key.create(Profile.class, getUserId(user))).now();
+        if (profile == null) {
+            // Populate displayName and teeShirtSize with the default values if null.
+            if (displayName == null) {
+                displayName = extractDefaultDisplayNameFromEmail(user.getEmail());
+            }
+            if (city == null) {
+                city = City.NOT_SPECIFIED;
+            }
+            if (state == null) {
+                state = State.NOT_SPECIFIED;
+            }
+            if (major == null) {
+                major = Major.NOT_SPECIFIED;
+            }
+            if (institution == null) {
+                institution = Institution.NOT_SPECIFIED;
+            }
+            if (startdate == null) {
+                startdate = Startdate.NOT_SPECIFIED;
+            }
+           
+            profile = new Profile(getUserId(user), displayName, user.getEmail(), city, state, major, institution, startdate);
+        } else {
+            profile.update(displayName, city, state, major, institution, startdate);
+        }
+        ofy().save().entity(profile).now();
+        return profile;
+    }
