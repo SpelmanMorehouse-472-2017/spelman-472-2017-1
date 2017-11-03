@@ -1,7 +1,7 @@
 # README
+Flinder
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The goal of this web app is to provide recommendations on what majors are best based on location, net income, and average college institution costs
 
 Things you may want to cover:
 
