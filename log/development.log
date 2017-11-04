@@ -328,3 +328,117 @@ ActionView::Template::Error (require_tree argument must be a directory):
   
 app/assets/javascripts/cable.js:6
 app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__1392069659095252432_70335474555580'
+Started GET "/" for 127.0.0.1 at 2017-11-03 19:13:09 -0400
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 14ms
+
+
+  
+ActionView::Template::Error (require_tree argument must be a directory):
+     5:     <%= csrf_meta_tags %>
+     6:     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.css">
+     7:     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.css">
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/assets/javascripts/cable.js:6
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__1392069659095252432_70335480763920'
+Started GET "/" for 127.0.0.1 at 2017-11-03 19:13:23 -0400
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 17ms
+
+
+  
+ActionView::Template::Error (require_tree argument must be a directory):
+     5:     <%= csrf_meta_tags %>
+     6:     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.css">
+     7:     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.css">
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/assets/javascripts/cable.js:6
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__1392069659095252432_70335481142280'
+Started GET "/" for 127.0.0.1 at 2017-11-03 19:13:24 -0400
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 12ms
+
+
+  
+ActionView::Template::Error (require_tree argument must be a directory):
+     5:     <%= csrf_meta_tags %>
+     6:     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.css">
+     7:     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.css">
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/assets/javascripts/cable.js:6
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__1392069659095252432_70335516984360'
+Started GET "/" for 127.0.0.1 at 2017-11-03 19:14:08 -0400
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 34ms
+
+
+  
+ActionView::Template::Error (require_tree argument must be a directory):
+     5:     <%= csrf_meta_tags %>
+     6:     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.css">
+     7:     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.css">
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/assets/javascripts/cable.js:6
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__1392069659095252432_70335517135040'
+Started GET "/" for 127.0.0.1 at 2017-11-03 19:15:56 -0400
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 775ms
+
+
+  
+ActionView::Template::Error (require_tree argument must be a directory):
+     5:     <%= csrf_meta_tags %>
+     6:     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.css">
+     7:     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.css">
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/assets/javascripts/cable.js:6
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___4164155758648726892_70174204527680'
+Started GET "/" for 127.0.0.1 at 2017-11-03 19:15:59 -0400
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 36ms
+
+
+  
+ActionView::Template::Error (require_tree argument must be a directory):
+     5:     <%= csrf_meta_tags %>
+     6:     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.css">
+     7:     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.css">
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/assets/javascripts/cable.js:6
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___4164155758648726892_70174176445380'
