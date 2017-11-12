@@ -1,79 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>FLINDER</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+<html>
+<title>HOME</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
-body, html {
-    height: 100%;
-    color: #777;
-    line-height: 1.8;
-}
-
-/* Create a Parallax Effect */
-.bgimg-1, .bgimg-2, .bgimg-3 {
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-/* First image (Logo. Full height) */
-.bgimg-1 {
-    background-image: url('/w3images/parallax1.jpg');
-    min-height: 100%;
-}
-
-/* Second image (Portfolio) */
-.bgimg-2 {
-    background-image: url("/w3images/parallax2.jpg");
-    min-height: 400px;
-}
-
-/* Third image (Contact) */
-.bgimg-3 {
-    background-image: url("/w3images/parallax3.jpg");
-    min-height: 400px;
-}
-
-.w3-wide {letter-spacing: 10px;}
-.w3-hover-opacity {cursor: pointer;}
-
-/* Turn off parallax scrolling for tablets and phones */
-@media only screen and (max-device-width: 1024px) {
-    .bgimg-1, .bgimg-2, .bgimg-3 {
-        background-attachment: scroll;
-    }
+body {font-family: "Times New Roman", Georgia, Serif;}
+h1,h2,h3,h4,h5,h6 {
+    font-family: "Playfair Display";
+    letter-spacing: 5px;
 }
     body {
     background-color: lightblue;
 }
-
 h1 {
     color: white;
     text-align: center;
 }
-
 p {
     font-family: verdana;
     font-size: 20px;
 }
-
 </style>
-
-
-
-
 <body>
-
-
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
@@ -86,71 +35,77 @@ p {
         <a href="#knowyourworth" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> KNOW YOUR WORTH</a>
         <a href="#flinderreviews" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> FLINDER REVIEWS</a>
         <a href="#collegequiz" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> COLLEGE QUIZ</a>
+        <a href="#signup" class="w3-bar-item w3-button" onclick="toggleFunction()">SIGN UP</a>
         <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
             <i class="fa fa-search"></i>
         </a>
     </div>
-
-    <!-- Navbar on small screens -->
-    <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-        <a href="#salaries" class="w3-bar-item w3-button" onclick="toggleFunction()">SALARIES</a>
-        <a href="#knowyourworth" class="w3-bar-item w3-button" onclick="toggleFunction()">KNOW YOUR WORTH</a>
-        <a href="#flinderreviews" class="w3-bar-item w3-button" onclick="toggleFunction()">FLINDER REVIEWS</a>
-        <a href="#collegequiz" class="w3-bar-item w3-button" onclick="toggleFunction()">COLLEGE QUIZ</a>
-        <a href="#" class="w3-bar-item w3-button">SEARCH</a>
-    </div>
 </div>
 
-<!-- First Parallax Image with Logo Text -->
-<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
-    <div class="w3-display-middle" style="white-space:nowrap;">
-        <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">THE <span class="w3-hide-small">FLINDER</span> EXPERIENCE</span>
-    </div>
-</div>
+<!-- Header --><header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
+        <img class="w3-image" src="https://si.wsj.net/public/resources/images/MK-CC463A_SALAR_P_20130416172323.jpg" alt="Hamburger Catering" width="1600" height="800">
+        <div class="w3-display-bottomleft w3-padding-large w3-opacity">
 
-<!-- Container (About Section) -->
-<div class="w3-content w3-container w3-padding-64" id="about">
-    <h3 class="w3-center">ABOUT US</h3>
-    <p class="w3-center"><em>WHAT WE DO</em></p>
-    <p> Here at FLINDER, our Primary Goal is to Provide Students with Adequate Information on How to Conquer College! The Rising Costs of Higher Education Coupled with the Stress. Let FLINDER Ease Your Minds</p>
-    <div class="w3-row">
-        <div class="w3-col m6 w3-center w3-padding-large">
-        <p><b><i class="fa fa-user w3-margin-right"></i> Deja Bond</b></p><br>
-        <img src="/w3images/avatar_hat.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="500" height="333">
     </div>
-        <div class="w3-col m6 w3-center w3-padding-large">
-            <p><b><i class="fa fa-user w3-margin-right"></i> Andrea Richmond</b></p><br>
-            <img src="/w3images/avatar_hat.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="500" height="333">
+</header>
+
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:1100px">
+
+    <!-- About Section -->
+    <div class="w3-row w3-padding-64" id="about">
+        <div class="w3-col m6 w3-padding-large w3-hide-small">
+            <img src="https://www.collegeboard.org/sites/default/files/about-collegeboard-video_0.jpg" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
         </div>
-        <div class="w3-col m6 w3-center w3-padding-large">
-            <p><b><i class="fa fa-user w3-margin-right"></i> Demetrius King</b></p><br>
-            <img src="/w3images/avatar_hat.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="500" height="333">
-        </div>
-        <div class="w3-col m6 w3-center w3-padding-large">
-            <p><b><i class="fa fa-user w3-margin-right"></i> Julian Hutson</b></p><br>
-            <img src="/w3images/avatar_hat.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="500" height="333">
+
+        <div class="w3-col m6 w3-padding-large">
+            <h1 class="w3-center">About Flinder</h1><br>
+            <h5 class="w3-center">Tradition since 2017</h5>
+            <p class="w3-large">Here at FLINDER, our Primary Goal is to Provide Students with Adequate Information on How to Conquer College! The Rising Costs of Higher Education Coupled with the Stress. Let FLINDER Ease Your Minds.</p>
+
         </div>
     </div>
-</div>
 
-<div class="w3-content" style="max-width:800px">
-    <img class="mySlides" src="img_nature_wide.jpg" style="width:100%">
-    <img class="mySlides" src="img_fjords_wide.jpg" style="width:100%">
-    <img class="mySlides" src="img_mountains_wide.jpg" style="width:100%">
-</div>
+    <hr>
 
-<div class="w3-center">
-    <div class="w3-section">
-        <button class="w3-button w3-light-grey" onclick="plusDivs(-1)">❮ Prev</button>
-        <button class="w3-button w3-light-grey" onclick="plusDivs(1)">Next ❯</button>
+    <!-- Menu Section -->
+    <div class="w3-row w3-padding-64" id="menu">
+        <div class="w3-col l6 w3-padding-large">
+            <h1 class="w3-center">FLINDER Family</h1><br>
+            <h4>Julian Hutson</h4>
+            <p class="w3-text-grey">Senior: Computer Science Morehouse 2018</p><br>
+
+            <h4>Demetrius King</h4>
+            <p class="w3-text-grey">Senior: Computer Science Morehouse 2018</p><br>
+
+            <h4>Deja Bond</h4>
+            <p class="w3-text-grey">Senior: Computer Science Spelman 2018</p><br>
+
+            <h4>Andrea Richmond</h4>
+            <p class="w3-text-grey">Senior: Computer Science Spelman 2018</p><br>
+
+        </div>
+
+        <div class="w3-col l6 w3-padding-large">
+            <img src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAu5AAAAJGVmOWVmZTZkLTc5YTUtNDg4NC1hNjVhLTI3ZjMxMDY2NTM1OA.jpg" class="w3-round w3-image w3-opacity-min" alt="Menu" width="200" height="350">
+            <img src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAA0gAAAAJDA0MWViNzU2LTE4YzItNGFjMC1hZTcyLTMyYmNlMWNjN2U2NQ.jpg" class="w3-round w3-image w3-opacity-min" alt="Menu" width="200" height="350">
+            <img src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAArmAAAAJDkyNzAxMGEzLTM5ZDQtNDQxOC1hNGQ5LTlkZmVkODhjZTQ0NA.jpg" class="w3-round w3-image w3-opacity-min" alt="Menu" width="200" height="350">
+            <img src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/20170718_213355.jpg" class="w3-round w3-image w3-opacity-min" alt="Menu" width="200" height="350">
+        </div>
     </div>
-    <button class="w3-button demo" onclick="currentDiv(1)">1</button>
-    <button class="w3-button demo" onclick="currentDiv(2)">2</button>
-    <button class="w3-button demo" onclick="currentDiv(3)">3</button>
+
+    <hr>
+
+
+
+    <!-- End page content -->
 </div>
 
-
-
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-32">
+    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
 
 </body>
 </html>
