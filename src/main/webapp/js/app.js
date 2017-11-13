@@ -32,10 +32,6 @@ var app = angular.module('conferenceApp',
                     templateUrl: '/partials/profile.html',
                     controller: 'MyProfileCtrl'
                 }).
-                when('/search', {
-                                    templateUrl: '/partials/search.html',
-                                    controller: 'MyProfileCtrl'
-                                }).
                 when('/', {
                     templateUrl: '/partials/home.html'
                 }).
@@ -90,7 +86,7 @@ app.constant('HTTP_ERRORS', {
  */
 app.factory('oauth2Provider', function ($modal) {
     var oauth2Provider = {
-        CLIENT_ID: 'replace with your client id',
+        CLIENT_ID: 'your-client-id',
         SCOPES: 'https://www.googleapis.com/auth/userinfo.email profile',
         signedIn: false
     };
@@ -115,9 +111,10 @@ app.factory('oauth2Provider', function ($modal) {
     oauth2Provider.signOut = function () {
         gapi.auth.signOut();
         // Explicitly set the invalid access token in order to make the API calls fail.
-        gapi.auth.setToken({access_token: ''})
+        gapi.auth.setToken({access_token: ''});
         oauth2Provider.signedIn = false;
     };
+
 
     /**
      * Shows the modal with Google+ sign in button.

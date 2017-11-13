@@ -1,0 +1,16 @@
+User Stories
+
+As a user, I WANT to be able to get recommendations on majors related to my interests, so that I can find majors that offer the most financial stability.
+
+As a user, I WANT to be able to find majors that pay a certain amount annually, so that I can find majors that fit my financial needs.
+
+/*
+User Name - Sydney Brown
+Topic - Where It Pays To Go To College
+
+Sydney is a high school senior at Riverdale High School in Philadelphia Pennsylvania. Sydney attends a public school in inner city Philadelphia. The School District of Philadelphia is on the verge on bankruptcy. Superintendent William Hite has released the District’s new five-year plan, including significant new investments in schools and an internal turnaround strategy that relies on receiving a significant infusion of state aid –- a chancy prospect given the budget gridlock in Harrisburg.
+
+While the five year plan is taking place, the district has implemented cut-backs. There has been less resources for students to receive for aiding in the College process. Riverdale HS is down to only one high school counselor. With a senior class size of 565 students, the counselor has little to no time for Sydney. 
+
+Sydney wants to attend college, but with all the news of college graduates not receiving jobs upon graduation she wants help with choosing a major and school. 
+*/

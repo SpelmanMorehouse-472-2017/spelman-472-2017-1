@@ -1,90 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>COLLEGE QUIZ</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div ng-controller="MyProfileCtrl" ng-init="init()">
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="messages" class="alert alert-{{alertStatus}}" ng-show="messages">
+                <span ng-bind="messages"></span>
+                <i class="dismiss-messages pull-right glyphicon glyphicon-remove" ng-click="messages = ''"
+                   ng-show="messages"></i>
+            </div>
+            <img class="spinner" src="/img/ajax-loader.gif" ng-show="loading"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <h3>My Profile</h3>
+            <form name="profileForm" novalidate role="form">
+                <div class="form-group" ng-class="{'has-warning': profile.displayName != initialProfile.displayName}">
+                    <label for="displayName">Display Name </label>
+                    <span class="label label-warning"
+                          ng-show="profile.displayName != initialProfile.displayName"> Changed</span>
+                    <input id="displayName" type="text" name="displayName" ng-model="profile.displayName"
+                           class="form-control"/>
+                </div>
 
-<body>
+                <div class="form-group" ng-class="{'has-warning': profile.teeShirtSize != initialProfile.teeShirtSize}">
+                    <label for="teeShirtSize">Tee shirt size</label>
+                    <span class="label label-warning"
+                          ng-show="profile.teeShirtSize != initialProfile.teeShirtSize"> Changed</span>
+                    <select id="teeShirtSize" ng-model="profile.teeShirtSize" name="teeShirtSize" ng-options="size for size in teeShirtSizes"
+                            class="form-control">
+                    </select>
+                </div>
 
-<div class="w3-container w3-center w3-animate-top">
-    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
-        <i class="fa fa-bars"></i>
-    </a>
-    <a href="#home" class="w3-bar-item w3-button">FLINDER HOME</a>
-    <a href="#salaries" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> SALARIES</a>
-    <a href="#knowyourworth" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> KNOW YOUR WORTH</a>
-    <a href="#flinderreviews" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> FLINDER REVIEWS</a>
-    <a href="#collegequiz" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> COLLEGE QUIZ</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
-        <i class="fa fa-search"></i>
-    </a>
-    <h2>See Your College Match</h2>
-
-
-
-
-
-    <div class="w3-panel w3-leftbar w3-light-grey">
-        <p class="w3-xlarge w3-serif"><i>"Choose a Major You Love and You'll Never Work a Day in Your Life Because That Field Probaly Isn't Hiring"</i></p>
-        <p>Every Broke College Student</p>
-        <p>Don't Be Like These College Students</p>
-        <br><br>
-
-        <p><i class="fa fa-spinner w3-spin" style="font-size:64px"></i></p>
+                <button ng-click="saveProfile(profileForm)" class="btn btn-primary"
+                        ng-disabled="loading">Update profile
+                </button>
+            </form>
+        </div>
     </div>
 </div>
-
-<div class="w3-bar" id="myNavbar">
-
-</div>
-
-<style>
-    body {
-    background-color: lightblue;
-}
-h1 {
-    color: white;
-    text-align: center;
-}
-p {
-    font-family: verdana;
-    font-size: 20px;
-}
-</style>
-
-<form action="/action_page.php" method="get">
-    Select your preferred geographical location (Select all that apply)<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;Urban<input type="checkbox" name="area" value="Urban"><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;Suburban<input type="checkbox" name="area" value="Suburban"><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;Rural<input type="checkbox" name="area" value="Rural"><br><br>
-    What do you want to get out of your college experience? (Select all that apply)<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;Research Opportunities<input type="checkbox" name="goalAfter" value="Research"><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;General Education<input type="checkbox" name="goalAfter" value="General"><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;Many Majors/Minors<input type="checkbox" name="goalAfter" value="Variety"><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;Job Offerings<input type="checkbox" name="goalAfter" value="Job"><br><br>
-    What is your<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;Grade A student<input type="checkbox" name="grade" value="A"><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;Grade B student<input type="checkbox" name="grade" value="B"><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;Grade C student<input type="checkbox" name="grade" value="C"><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;Ds and below<input type="checkbox" name="grade" value="D-F"><br><br>
-    What is your preferred campus lifestyle (Select all that apply)?<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;Party school<input type="checkbox" name="lifestyle" value="Party"><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;H.B.C.U<input type="checkbox" name="lifestyle" value="HBCU"><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;P.W.I<input type="checkbox" name="lifestyle" value="PWI"><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;Small Insitution<input type="checkbox" name="lifestyle" value="Small"><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;Large Insitution<input type="checkbox" name="lifestyle" value="Large"><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;Religious<input type="checkbox" name="lifestyle" value="Religious"><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;Sports Oriented<input type="checkbox" name="lifestyle" value="Sports"><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;Co-ed<input type="checkbox" name="lifestyle" value="Co-ed"><br>
-    <a href="#/search"><button>Submit</button></a>
-    <!-- Return suggested college after submitting -->
-</form>
-
-</body>
-
-</html>

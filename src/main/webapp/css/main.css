@@ -10,12 +10,6 @@ body {
     cursor: pointer;
 }
 
-/* To disable the Google+ Sign In Button, but gapi.signin.render should be invoked to store the credential
-   if that is stored in cookie. */
-#signInButton iframe {
-    display: none;
-}
-
 .required {
     color: red;
 }
@@ -53,6 +47,12 @@ body {
 #signInButton {
     cursor: pointer;
     vertical-align: middle;
+}
+
+/* To disable the Google+ Sign In Button, but gapi.signin.render should be invoked to store the credential
+   if that is stored in cookie. */
+#signInButton iframe {
+    display: none;
 }
 
 #profile-container {
