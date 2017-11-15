@@ -1,0 +1,12 @@
+runtime: java
+env: flex
+
+env_variables:
+    CLOUDSQL_CONNECTION_NAME: salarytable
+    CLOUDSQL_USER: root
+    CLOUDSQL_PASSWORD: flinder
+
+
+libraries:
+- name: MySQLdb
+  version: "latest"

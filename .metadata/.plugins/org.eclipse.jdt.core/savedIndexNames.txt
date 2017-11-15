@@ -1,0 +1,11 @@
+INDEX VERSION 1.130+/Users/metroboomin/spelman-472-2017-1/.metadata/.plugins/org.eclipse.jdt.core
+169942765.index
+1143340358.index
+393836251.index
+4192160905.index
+4054964032.index
+3665656385.index
+1883791709.index
+4289237529.index
+1686274598.index
+520432637.index
