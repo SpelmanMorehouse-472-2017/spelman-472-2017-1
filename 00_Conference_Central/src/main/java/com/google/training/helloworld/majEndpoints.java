@@ -40,39 +40,39 @@ import java.util.concurrent.TimeoutException;
  * Defines endpoint functions APIs.
  */
 @Api(
-    name = "helloworldendpoints", 
+    name = "majEndpoints",
     version = "v1",
     scopes = {Constants.EMAIL_SCOPE },
     clientIds = {Constants.WEB_CLIENT_ID, Constants.API_EXPLORER_CLIENT_ID },
     description = "API for hello world endpoints."
     )
-public class HelloWorldEndpoints {
+public class majEndpoints {
 
    // Make this method available externally through Endpoints
     @ApiMethod(name = "sayHello", path = "sayHello", httpMethod = HttpMethod.GET)
-    public HelloClass sayHello() {
-        return new HelloClass();
+    public Maj sayHello() {
+        return new Maj();
     }
 
     // Make this method available externally through Endpoints
     @ApiMethod(name = "sayHelloByName", path = "sayHelloByName", httpMethod = HttpMethod.GET)
-    public HelloClass sayHelloByName (@Named("name") String name) {
-        return new HelloClass(name);
+    public Maj sayHelloByName (@Named("name") String name) {
+        return new Maj(name);
     }
 
     // Make this method available externally through Endpoints
     @ApiMethod(name = "greetByPeriod", path = "greetByPeriod", httpMethod = HttpMethod.GET)
-    public HelloClass greetByPeriod (@Named("name") String name, @Named("period") String period) {
-        return new HelloClass(name, period);
+    public Maj greetByPeriod (@Named("name") String name, @Named("period") String period) {
+        return new Maj(name, period);
     }
 
     @ApiMethod(name = "sayHelloByNames", path = "sayHelloByNames", httpMethod = HttpMethod.GET)
-    public HelloClass sayHelloByName_1() {
+    public Maj sayHelloByName_1() {
         BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
         QueryJobConfiguration queryConfig =
                 QueryJobConfiguration.newBuilder(
                         "SELECT "
-                                + "* FROM [spelman-472-2017-1:degreesthatpayback.DegreeList];")
+                                + "StartingSalary FROM [spelman-472-2017-1:degreesthatpayback.DegreeList] WHERE StartingSalary = 35600 LIMIT 1000;")
                         // Use standard SQL syntax for queries.
                         // See: https://cloud.google.com/bigquery/sql-reference/
                         .setUseLegacySql(false)
@@ -81,9 +81,13 @@ public class HelloWorldEndpoints {
         // Create a job ID so that we can safely retry.
         JobId jobId = JobId.of(UUID.randomUUID().toString());
         Job queryJob = bigquery.create(JobInfo.newBuilder(queryConfig).setJobId(jobId).build());
-
+try {
 // Wait for the query to complete.
-      //  queryJob = queryJob.waitFor();
+    queryJob = queryJob.waitFor();
+} catch (InterruptedException e) {
+    return new Maj();
+}
+
 
 // Check for errors
         if (queryJob == null) {
@@ -121,9 +125,10 @@ public class HelloWorldEndpoints {
 
         }
 */
+
         String temp = result.toString();;
 
-            return new HelloClass(temp);
+            return new Maj(temp);
     }
 
 
