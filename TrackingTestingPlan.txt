@@ -23,7 +23,7 @@ In order to keep all team members aware of all aspects of project development we
 
   F. How and how often will you evaluate your progress and reassess your plan? (I THINK THAT'S OK BUT WE'LL SEE)
   
-  During our weekly meetings, our process will be ealuted and plan will be reassses based on the needs of the user for the app engine. Our progress is tested by the success of our individual and integrated testing.
+  During our weekly meetings, our process will be evaluated and plan will be reasssed based on the needs of the user for the app engine. Our progress will be tested by the success of our individual and integrated testing.
  
 3.
   Determine a test plan.
