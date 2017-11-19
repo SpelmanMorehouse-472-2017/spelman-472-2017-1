@@ -13,6 +13,11 @@ public class ProfileForm {
      * T shirt size.
      */
     private TeeShirtSize teeShirtSize;
+    private Subject subject;
+    private Acivity acivity;
+    private CollegeType collegeType;
+    private LearningType learningType;
+    private WorkType workType;
 
     private ProfileForm () {}
 
@@ -33,6 +38,13 @@ public class ProfileForm {
     public TeeShirtSize getTeeShirtSize() {
         return teeShirtSize;
     }
+
+    //These are the api calls to recieve input for major quiz
+    public Subject subject() {return subject;}
+    public Acivity acivity() {return acivity;}
+    public CollegeType collegeType() {return  collegeType;}
+    public LearningType learningType() {return learningType;}
+    public WorkType workType() {return workType;}
     
     public static enum TeeShirtSize {
     	NOT_SPECIFIED,
@@ -43,5 +55,32 @@ public class ProfileForm {
         XL, 
         XXL,
         XXXL
+    }
+
+    //These are listing out the available options for each object
+    public static enum Subject {
+        Math,
+        English,
+        Science,
+        Art
+    }   public static enum Acivity {
+        Robotics,
+        State,
+        Band,
+        Poetry
+    }    public static enum CollegeType {
+        Fun,
+        Learning,
+        Earnings
+    }
+    public static enum LearningType {
+        handson,
+        brainbased
+    }
+    public static enum WorkType {
+        Papers,
+        Lab,
+        Reasearch,
+        Artwork
     }
 }

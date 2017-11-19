@@ -54,6 +54,11 @@ public class ConferenceApi {
         String mainEmail = null;
         String displayName = "Your name will go here";
         TeeShirtSize teeShirtSize = TeeShirtSize.NOT_SPECIFIED;
+        Subject subject = Subject.Math;
+        Acrivity activity = Activity.Robotics;
+        CollegeType collegeType = CollegeType.Fun;
+        LearningType learningType = LearningType.Handson;
+        WorkType workType = WorkType.Papers;
 
         // TODO 2
         // If the user is not logged in, throw an UnauthorizedException
@@ -75,10 +80,12 @@ public class ConferenceApi {
 
         // Create a new Profile entity from the
         // userId, displayName, mainEmail and teeShirtSize
-        Profile profile = new Profile(userId, displayName, mainEmail, teeShirtSize);
+        Profile profile = new Profile(userId, displayName, mainEmail, teeShirtSize,
+                subject, activity, collegeType, learningType, workType);
 
         // TODO 3 (In Lesson 3)
         // Save the Profile entity in the datastore
+        
 
         // Return the profile
         return profile;
