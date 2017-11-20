@@ -40,34 +40,34 @@ import java.util.concurrent.TimeoutException;
  * Defines endpoint functions APIs.
  */
 @Api(
-    name = "majEndpoints",
+    name = "helloworldendpoints", 
     version = "v1",
     scopes = {Constants.EMAIL_SCOPE },
     clientIds = {Constants.WEB_CLIENT_ID, Constants.API_EXPLORER_CLIENT_ID },
     description = "API for hello world endpoints."
     )
-public class majEndpoints {
+public class HelloWorldEndpoints {
 
    // Make this method available externally through Endpoints
     @ApiMethod(name = "sayHello", path = "sayHello", httpMethod = HttpMethod.GET)
-    public Maj sayHello() {
-        return new Maj();
+    public HelloClass sayHello() {
+        return new HelloClass();
     }
 
     // Make this method available externally through Endpoints
     @ApiMethod(name = "sayHelloByName", path = "sayHelloByName", httpMethod = HttpMethod.GET)
-    public Maj sayHelloByName (@Named("name") String name) {
-        return new Maj(name);
+    public HelloClass sayHelloByName (@Named("name") String name) {
+        return new HelloClass(name);
     }
 
     // Make this method available externally through Endpoints
     @ApiMethod(name = "greetByPeriod", path = "greetByPeriod", httpMethod = HttpMethod.GET)
-    public Maj greetByPeriod (@Named("name") String name, @Named("period") String period) {
-        return new Maj(name, period);
+    public HelloClass greetByPeriod (@Named("name") String name, @Named("period") String period) {
+        return new HelloClass(name, period);
     }
 
     @ApiMethod(name = "sayHelloByNames", path = "sayHelloByNames", httpMethod = HttpMethod.GET)
-    public Maj sayHelloByName_1() {
+    public HelloClass sayHelloByName_1() {
         BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
         QueryJobConfiguration queryConfig =
                 QueryJobConfiguration.newBuilder(
@@ -85,7 +85,7 @@ try {
 // Wait for the query to complete.
     queryJob = queryJob.waitFor();
 } catch (InterruptedException e) {
-    return new Maj();
+    return new HelloClass();
 }
 
 
@@ -125,10 +125,9 @@ try {
 
         }
 */
-
         String temp = result.toString();;
 
-            return new Maj(temp);
+            return new HelloClass(temp);
     }
 
 

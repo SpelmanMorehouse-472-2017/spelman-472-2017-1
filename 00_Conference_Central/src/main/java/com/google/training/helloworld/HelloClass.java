@@ -1,16 +1,16 @@
 package com.google.training.helloworld;
 
-public class Maj {
+public class HelloClass {
     public String message = "Hello Endpoints";
 
-    public Maj () {
+    public HelloClass () {
     }
 
-    public Maj (String name) {
+    public HelloClass (String name) {
         message = name;
     }
   
-    public Maj(String name, String period ) {
+    public HelloClass(String name, String period ) {
         message = "Good " + period + " " + name;
     }
 
