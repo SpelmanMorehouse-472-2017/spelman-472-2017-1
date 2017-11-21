@@ -1,94 +1,316 @@
 <!DOCTYPE html>
-<!-- Bootstrap the angular app after the Google Java Script libraries are loaded. -->
-<html lang="en">
+<html>
+<title>FLINDER</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://s.codepen.io/assets/libs/modernizr.js" type="text/javascript"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel='stylesheet prefetch' href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
+<link rel="stylesheet" href="css/style.css">
 
+<body id="myPage">
 
+<!-- Sidebar on click -->
+<nav class="w3-sidebar w3-bar-block w3-white w3-card w3-animate-left w3-xxlarge" style="display:none;z-index:2" id="mySidebar">
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-display-topright w3-text-teal">Close
+        <i class="fa fa-remove"></i>
+    </a>
+</nav>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Navbar -->
+<div class="w3-top">
+    <div class="w3-bar w3-theme-d2 w3-left-align">
+        <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+        <a href="#" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Home</a>
+        <a href="#team" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Team</a>
+        <a href="#about" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About</a>
+        <a href="#salaries" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Salaries</a>
+        <a href="#search" class="w3-bar-item w3-button w3-hide-small w3-hover-white">College and Major Search</a>
+        <a href="#reviews" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Reviews</a>
 
-    <title>Flinder</title>
+        <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i></a>
+    </div>
 
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/bootstrap-cosmo.css">
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/offcanvas.css">
-    <link rel="shortcut icon" href="/img/favicon.ico">
-    <meta property="og:title" content="Conference Central">
-    <meta property="og:type" content="website">
-    <meta property="og:description" content="Conference Central web app that lets you manage conferences.">
-    <meta property="og:image" content="/img/CloudPlatform_logo.png">
-    <meta property="og:site_name" content="An web app powered by Google App Engine">
-
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.js"></script>
-    <script>
-        /**
-         * Initializes the Google API JavaScript client. Bootstrap the angular module after loading the Google libraries
-         * so that Google JavaScript library ready in the angular modules.
-         */
-        function init() {
-            gapi.client.load('conference', 'v1', null, '//' + window.location.host + '/_ah/api');
-            gapi.client.load('oauth2', 'v2', function () {
-                angular.bootstrap(document, ['conferenceApp']);
-            });
-        };
-    </script>
-    <script src="//apis.google.com/js/client:plusone.js?onload=init"></script>
-</head>
-
-<!-- Restore the credential from cookie if stored by calling initSignInButton() -->
-<body ng-controller="RootCtrl" ng-init="initSignInButton()">
-
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">Flinder</a>
-        </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li ng-class="{ active: isActive('/conference')}" ng-click="collapseNavbar()"><a href="#/conference">Reviews</a></li>
-                <li ng-class="{ active: isActive('/conference/create')}" ng-click="collapseNavbar()"><a href="#/conference/create" >Recommendations</a></li>
-                <li ng-class="{ active: isActive('/profile')}" ng-click="collapseNavbar()"><a href="#/profile">Search</a></li>
-                <li class="nav-divider"></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li id="signInLink" ng-hide="getSignedInState()"><a ng-click="signIn(); collapseNavbar()">Google+ SignIn</a></li>
-                <li id="signOutLink" ng-show="getSignedInState()"><a ng-click="signOut(); collapseNavbar()">Log out</a></li>
-            </ul>
-        </div>
+    <!-- Navbar on small screens -->
+    <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
+        <a href="#team" class="w3-bar-item w3-button">Team</a>
+        <a href="#about" class="w3-bar-item w3-button">About</a>
+        <a href="#salaries" class="w3-bar-item w3-button">Salaries</a>
+        <a href="#search" class="w3-bar-item w3-button">College and Major Search</a>
+        <a href="#reviews" class="w3-bar-item w3-button">Reviews</a>
+        <a href="#" class="w3-bar-item w3-button">Search</a>
     </div>
 </div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-lg-12">
-            <div id="rootMessages" class="alert alert-{{alertStatus}}" ng-show="rootMessages">
-                <span ng-bind="rootMessages"></span>
-                <i class="dismiss-messages pull-right glyphicon glyphicon-remove" ng-click="rootMessages = ''"
-                   ng-show="rootMessages"></i>
+<!-- Image Header -->
+<div class="w3-display-container w3-animate-opacity">
+    <img src="http://www.albany.edu/news/images/Andrade_380(1).jpg" alt="boat" style="width:100%;min-height:350px;max-height:600px;">
+    <div class="w3-container w3-display-bottomleft w3-margin-bottom">
+        <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Go To W3.CSS">Become A Flinderian </button>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="id01" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-top">
+        <header class="w3-container w3-teal w3-display-container">
+            <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+            <h4>Oh snap! We just showed you a modal..</h4>
+            <h5>Because we can <i class="fa fa-smile-o"></i></h5>
+        </header>
+        <div class="w3-container">
+            <p>Cool huh? Ok, enough teasing around..</p>
+            <p>Go to our <a class="w3-text-teal" href="/w3css/default.asp">W3.CSS Tutorial</a> to learn more!</p>
+        </div>
+        <footer class="w3-container w3-teal">
+            <p>Modal footer</p>
+        </footer>
+    </div>
+</div>
+
+<!-- Team Container -->
+<div class="w3-container w3-padding-64 w3-center" id="team">
+    <h2>THE FLINDER TEAM</h2>
+    <p>Meet the team - our office rats:</p>
+
+    <div class="w3-row"><br>
+
+        <div class="w3-quarter">
+            <img src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAArmAAAAJDkyNzAxMGEzLTM5ZDQtNDQxOC1hNGQ5LTlkZmVkODhjZTQ0NA.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+            <h3>Demetrius King</h3>
+        </div>
+
+        <div class="w3-quarter">
+            <img src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAu5AAAAJGVmOWVmZTZkLTc5YTUtNDg4NC1hNjVhLTI3ZjMxMDY2NTM1OA.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+            <h3>Deja Bond</h3>
+        </div>
+
+        <div class="w3-quarter">
+            <img src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAA0gAAAAJDA0MWViNzU2LTE4YzItNGFjMC1hZTcyLTMyYmNlMWNjN2U2NQ.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+            <h3>Julian Hutson</h3>
+        </div>
+
+        <div class="w3-quarter">
+            <img src="https://i.imgur.com/yEUUgdh.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+            <h3>Andrea Richmond</h3>
+        </div>
+
+    </div>
+</div>
+
+<!-- About Row -->
+<div class="w3-row-padding w3-padding-64 w3-theme-l1" id="about">
+
+    <div class="w3-quarter">
+        <h2>What We Believe in At Flinder</h2>
+        <p>Flinder is a service that provides aspiring students with suggestions for colleges and majors that fit their
+            person interests. Flinder utilizes data from hundreds of colleges and universites nationwide in order to match
+            future students with the perfect institution for them. We believe that if students are going to pay for a
+            higher education, they should first understand which institutions suits them best. Whatever your personal
+            preferences are, Flinder can match you with a major that best fits your interests and aspirations.</p>
+    </div>
+
+    <div class="w3-quarter">
+        <div class="w3-card w3-white">
+            <img src="https://www.campuspride.org/wp-content/uploads/Spelman-college.jpg" alt="Vernazza" width="900" height="200" style="width:100%">
+            <div class="w3-container">
+                <h3>Spelman College</h3>
+
+                <p>350 Spelman Lane</p>
+                <p>Atlanta, Georgia</p>
             </div>
         </div>
     </div>
-    <ng-view></ng-view>
+
+    <div class="w3-quarter">
+        <div class="w3-card w3-white">
+            <img src="https://lh5.googleusercontent.com/DpT_B6puRaoLsGKaEgEDH-AfED0ZXRIKqcZ85odSnO_X9dCK1RuzCtTcNBRqf2SZjQ1MV-v8fGs0eiOUGINnuYcFFk0TnIscAXPEhmtqeWTxMIhVIXUgYe7r8GDEDmaO40ZNzfTs" alt="Vernazza" width="900" height="335" style="width:100%">
+            <div class="w3-container">
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="w3-quarter">
+        <div class="w3-card w3-white">
+            <img src="http://www.morehouse.edu/media/morehouse2015/styleassets/images/about1.jpg" alt="Cinque Terre" width="900" height="200" style="width:100%">
+            <div class="w3-container">
+                <h3>Morehouse College</h3>
+                <p>830 Westview Drive</p>
+                <p>Atlanta, Georgia</p>
+            </div>
+        </div>
+    </div>
+
 </div>
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-<script src="/js/app.js"></script>
-<script src="/js/controllers.js"></script>
 
-<!-- Put the signInButton to invoke the gapi.signin.render to restore the credential if stored in cookie. -->
-<span id="signInButton" style="display: none" disabled="true"></span>
+
+<!-- Salaries Container -->
+<div class="w3-container w3-padding-64 w3-center" id="salaries">
+    <h2>View Salaries</h2>
+    <p><i class="fa fa-spinner w3-spin" style="font-size:64px"></i></p>
+</div>
+<!-- Search Row -->
+<div class="w3-row-padding w3-center w3-padding-64" id="search">
+    <h2>College and Major Search</h2>
+    <p>Find the Major or College that Fits You Here At Flinder.</p><br>
+    <div class="w3-third w3-margin-bottom">
+        <ul class="w3-ul w3-border w3-hover-shadow">
+            <li class="w3-theme">
+                <p class="w3-xlarge">College Questions</p>
+                <form action="/action_page.php" method="get">
+                    Select your preferred geographical location (Select all that apply)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Urban<input type="checkbox" name="area" value="Urban"><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Suburban<input type="checkbox" name="area" value="Suburban"><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Rural<input type="checkbox" name="area" value="Rural"><br><br>
+                    
+                    What do you want to get out of your college experience? (Select all that apply)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Research Opportunities<input type="checkbox" name="goalAfter" value="Research"><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;General Education<input type="checkbox" name="goalAfter" value="General"><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Many Majors/Minors<input type="checkbox" name="goalAfter" value="Variety"><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Job Offerings<input type="checkbox" name="goalAfter" value="Job"><br><br>
+                    
+                    What Type of School?<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Engineering<input type="checkbox" name="grade" value="Engineering"><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Liberal Arts<input type="checkbox" name="grade" value="Liberal Arts"><br>
+                
+                    
+                    What is your preferred campus lifestyle (Select all that apply)?<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Party school<input type="checkbox" name="lifestyle" value="Party"><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;H.B.C.U<input type="checkbox" name="lifestyle" value="HBCU"><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;P.W.I<input type="checkbox" name="lifestyle" value="PWI"><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Small Insitution<input type="checkbox" name="lifestyle" value="Small"><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Large Insitution<input type="checkbox" name="lifestyle" value="Large"><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Religious<input type="checkbox" name="lifestyle" value="Religious"><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Sports Oriented<input type="checkbox" name="lifestyle" value="Sports"><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Co-ed<input type="checkbox" name="lifestyle" value="Co-ed"><br>
+                    
+
+
+
+
+                    <input type="submit" value="Submit">
+                    <!-- Return suggested college after submitting -->
+                </form>
+
+        </ul>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+        <ul class="w3-ul w3-border w3-hover-shadow">
+            <li class="w3-theme-l2">
+                <p class="w3-xlarge">FLINDER</p>
+            </li>
+            <li class="w3-padding-16"><b>"Paying For School To Get a Job, Just To Get a Job to Pay For School."</b> </li>
+            <li class="w3-padding-16"><b>-Said every college student who didn't visit Flinder...Don't be like these students</b></li>
+            <li class="w3-padding-16"><b>"As long as my boss pretends my salary in high, I'll pretend that I have much work to do!."</b></li>
+            <li class="w3-padding-16"><b>-Said every person who didn't visit Flinder...Don't be like these people</b> </li>
+            <li class="w3-padding-16">
+            </li>
+        </ul>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+        <ul class="w3-ul w3-border w3-hover-shadow">
+            <li class="w3-theme">
+                <p class="w3-xlarge">Major Questions</p>
+                <form action="/action_page.php" method="get">
+                    What is your favorite subject(Select all that apply)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Math<input type="checkbox" name="area" value="Math"><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;English<input type="checkbox" name="area" value="English"><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Science<input type="checkbox" name="area" value="Science"><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Art<input type="checkbox" name="area" value="Art"><br><br>
+
+                    What extracirricular activity would you like to be apart of?<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Robotics<input type="checkbox" name="lifestyle" value="Robotics"><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Spanish/Japanese/French club<input type="checkbox" name="Language" value="State"><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Band<input type="checkbox" name="lifestyle" value="Band"><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Poetry<input type="checkbox" name="lifestyle" value="Poetry"><br>
+
+                    You are going to college for? <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Fun<input type="checkbox" name="area" value="Fun"><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Learning<input type="checkbox" name="area" value="Learning"><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Earning Potential<input type="checkbox" name="area" value="Earnings"><br>
+
+
+                    You're more:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Hands on<input type="checkbox" name="area" value="handson"><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Brain-based<input type="checkbox" name="area" value="brainbased"><br>
+
+
+                    It's easiest for you:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Write long papers<input type="checkbox" name="area" value="papers"><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Complete a lab project<input type="checkbox" name="area" value="lab"><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Do heavy research <input type="checkbox" name="area" value="research"><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Make some artwork<input type="checkbox" name="area" value="artwork"><br><br>
+
+
+
+
+
+                    <input type="submit" value="Submit">
+                    <!-- Return suggested college after submitting -->
+                </form>
+        </ul>
+    </div>
+</div>
+
+<!-- Review Container -->
+<div class="w3-container w3-padding-64 w3-theme-l5" id="reviews">
+    <div class="w3-row">
+        <div class="w3-col m5">
+            <div class="w3-padding-16"><span class="w3-xlarge w3-border-teal w3-bottombar">Write a Review</span></div>
+
+            <p>Say How You Feel</p>
+            <p><i class="fa fa-envelope-o w3-text-teal w3-xlarge"></i>  julian.hutson1@gmail.com</p>
+            <p><i class="fa fa-envelope-o w3-text-teal w3-xlarge"></i>  dbond1@scmail.spelman.edu</p>
+            <p><i class="fa fa-envelope-o w3-text-teal w3-xlarge"></i>  drking445@gmail.com</p>
+            <p><i class="fa fa-envelope-o w3-text-teal w3-xlarge"></i>  andrearich369@gmail.com</p>
+        </div>
+        <div class="w3-col m7">
+            <div class="content">
+                <div class="comments">
+                    <div class="editor">
+                        <div class="editor-header">
+                            <a href='#' data-role='bold'>B</a>
+                            <a href='#' data-role='italic'>I</a>
+                            <a href='#' data-role='underline'>U</a>
+                            <a href='#' data-role='justifyleft'><i class="menu-left"></i></a>
+                            <a href='#' data-role='justifycenter'><i class="menu-center"></i></a>
+                            <a href='#' data-role='justifyright'><i class="menu-right"></i></a>
+                        </div>
+                        <div id="text" class="editor-content" contenteditable>
+                            <p>Let's make a statement!</p>
+                            <p>This is an italicised sentence.</p>
+                            <p>Very important information.</p>
+                        </div>
+                    </div>
+                    <div class="insert-text">
+                        <span class="loading">Loading...</span>
+                        <span class="total-comment"></span>
+                        <p>
+                            <input type="submit" value="Comment" />
+                        </p>
+                    </div>
+                    <div class="list-comments">
+                        <div>Hello!</div>
+                        <div>My name's Tuan Linh.</div>
+                    </div>
+                </div>
+            </div>
+            <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+            <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+            <script type='text/javascript'  src="js/comments.js"></script>
+
+        </div>
+    </div>
+</div>
+
 
 </body>
 </html>
