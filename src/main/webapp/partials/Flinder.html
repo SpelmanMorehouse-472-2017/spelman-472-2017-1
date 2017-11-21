@@ -163,7 +163,7 @@
         <ul class="w3-ul w3-border w3-hover-shadow">
             <li class="w3-theme">
                 <p class="w3-xlarge">Flinder Funnies</p>
-                <img src="http://www.dumpaday.com/wp-content/uploads/2013/01/funny-college-quotes.jpg" alt="Cinque Terre"width="900" height="200" style="width:100%">
+                <img src="http://www.dumpaday.com/wp-content/uploads/2013/01/funny-college-quotes.jpg" alt="Cinque Terre"width="900" height="500" style="width:100%">
 
 
 
@@ -176,26 +176,30 @@
             <li class="w3-theme-l2">
                 <p class="w3-xlarge">College Search</p>
                 <form action="/action_page.php" method="get">
+
+
+
                     Select your preferred geographical location (Select One)<br>
-
-                    &nbsp;&nbsp;&nbsp;&nbsp;Northeastern<input type="checkbox" name="area" value="Northeastern"><br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;Southern<input type="checkbox" name="area" value="Southern"><br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;Midwestern<input type="checkbox" name="area" value="Midwestern"><br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;Western<input type="checkbox" name="area" value="Western"><br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;California<input type="checkbox" name="area" value="California"><br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Northeastern<input type="radio" name="area" value="Northeastern"><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Southern<input type="radio" name="area" value="Southern"><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Midwestern<input type="radio" name="area" value="Midwestern"><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Western<input type="radio" name="area" value="Western"><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;California<input type="radio" name="area" value="California"><br><br>
                     What Type of School? (Select One)<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;Engineering<input type="checkbox" name="schooltype" value="Engineering"><br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;Liberal Arts<input type="checkbox" name="schooltype" value="Liberal Arts"><br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;Party<input type="checkbox" name="schooltype" value="Party"><br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;Ivy League<input type="checkbox" name="schooltype" value="Ivy League"><br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;State<input type="checkbox" name="schooltype" value="State"><br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Engineering<input type="radio" name="schooltype" value="Engineering"><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Liberal Arts<input type="radio" name="schooltype" value="Liberal Arts"><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Party<input type="radio" name="schooltype" value="Party"><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Ivy League<input type="radio" name="schooltype" value="Ivy League"><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;State<input type="radio" name="schooltype" value="State"><br><br>
                     What is your preferred Starting Salary? (Select One)?<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;Nothing less than $40,000 <input type="checkbox" name="salary" value="40000"><br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;Nothing less than $50,000 <input type="checkbox" name="salary" value="50000"><br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;Nothing less than $60,000 <input type="checkbox" name="salary" value="60000"><br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;Nothing less than $70,000 <input type="checkbox" name="salary" value="70000"><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Nothing less than $40,000 <input type="radio" name="salary" value="40000"><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Nothing less than $50,000 <input type="radio" name="salary" value="50000"><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Nothing less than $60,000 <input type="radio" name="salary" value="60000"><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Nothing less than $70,000 <input type="radio" name="salary" value="70000"><br>
 
-                    <input type="submit" value="Submit">
+
+                    <input type="submit" value="Submit"
+                    onclick= "if(!this.form.radio.checked){alert('You have to answer each question.');return false}" >
                     <!-- Return suggested college after submitting -->
                 </form>
         </ul>
