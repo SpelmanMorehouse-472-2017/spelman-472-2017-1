@@ -176,32 +176,44 @@
             <li class="w3-theme-l2">
                 <p class="w3-xlarge">College Search</p>
                 <form action="/action_page.php" method="get">
-
-
-
                     Select your preferred geographical location (Select One)<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;Northeastern<input type="radio" name="area" value="Northeastern"><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Northeastern<input type="radio" name="area" value="Northeastern" required><br>
                     &nbsp;&nbsp;&nbsp;&nbsp;Southern<input type="radio" name="area" value="Southern"><br>
                     &nbsp;&nbsp;&nbsp;&nbsp;Midwestern<input type="radio" name="area" value="Midwestern"><br>
                     &nbsp;&nbsp;&nbsp;&nbsp;Western<input type="radio" name="area" value="Western"><br>
                     &nbsp;&nbsp;&nbsp;&nbsp;California<input type="radio" name="area" value="California"><br><br>
                     What Type of School? (Select One)<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;Engineering<input type="radio" name="schooltype" value="Engineering"><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Engineering<input type="radio" name="schooltype" value="Engineering" required><br>
                     &nbsp;&nbsp;&nbsp;&nbsp;Liberal Arts<input type="radio" name="schooltype" value="Liberal Arts"><br>
                     &nbsp;&nbsp;&nbsp;&nbsp;Party<input type="radio" name="schooltype" value="Party"><br>
                     &nbsp;&nbsp;&nbsp;&nbsp;Ivy League<input type="radio" name="schooltype" value="Ivy League"><br>
                     &nbsp;&nbsp;&nbsp;&nbsp;State<input type="radio" name="schooltype" value="State"><br><br>
                     What is your preferred Starting Salary? (Select One)?<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;Nothing less than $40,000 <input type="radio" name="salary" value="40000"><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Nothing less than $40,000 <input type="radio" name="salary" value="40000" required><br>
                     &nbsp;&nbsp;&nbsp;&nbsp;Nothing less than $50,000 <input type="radio" name="salary" value="50000"><br>
                     &nbsp;&nbsp;&nbsp;&nbsp;Nothing less than $60,000 <input type="radio" name="salary" value="60000"><br>
                     &nbsp;&nbsp;&nbsp;&nbsp;Nothing less than $70,000 <input type="radio" name="salary" value="70000"><br>
 
 
-                    <input type="submit" value="Submit"
-                    onclick= "if(!this.form.radio.checked){alert('You have to answer each question.');return false}" >
-                    <!-- Return suggested college after submitting -->
+                    <input type="submit" value="Submit">
                 </form>
+
+                <p id="demo"></p>
+
+                <script>
+                function myFunction() {
+                var x = document.getElementById("area").required;
+                var y = document.getElementById("schooltype").required;
+                vary z = document.getElementById("salary").required;
+                document.getElementById("demo").innerHTML = x;
+                document.getElementById("demo").innerHTML = y;
+                document.getElementById("demo").innerHTML = z;
+                }
+                </script>
+
+
+
+
         </ul>
     </div>
 
