@@ -1,24 +1,9 @@
-Tracking & Tesing Doc: 
-User Stories:
-Requirements doc:
-Design Doc:
+Tracking & Tesing Doc: https://docs.google.com/document/d/1OY8FB-S0IqTmx_82laV9hr8Z9fkDDhiinvBWJNrlds4/edit
+and https://github.com/SpelmanMorehouse-472-2017/spelman-472-2017-1/commits/master 
+and https://github.com/SpelmanMorehouse-472-2017/spelman-472-2017-1/blob/master/TrackingTestingPlan.txt
 
-API calls and response:
-UI Design: https://github.com/SpelmanMorehouse-472-2017/spelman-472-2017-1/blob/master/src/main/webapp/index.html
+User Stories: https://github.com/SpelmanMorehouse-472-2017/spelman-472-2017-1/blob/master/userstory.txt
+Requirements doc: https://github.com/SpelmanMorehouse-472-2017/spelman-472-2017-1/blob/master/Requirements.txt
+UI/Design Doc: https://www.figma.com/file/DUUjywQzfENkbCrHzi9GS6TA/Flinder
 
-
-100 pts
-10 pts Documentation  (Program manager; UI/UX)
-15 pts Unit / Integration test plan & test implementation (Test)
-15 pts Progress Tracking; intermediate submissions; scrum notes* (Program manager)
-
-10 pts Quality of client (UI/UX) - https://github.com/SpelmanMorehouse-472-2017/spelman-472-2017-1/blob/master/src/main/webapp/index.html
-
-10 pts Quality of service** (Java/Hacker)
-
-10 pts Completeness of implementation (Java; UI/UX)
-
-10 pts (individual) Team Collaboration - Go to Google Doc
-
-15 pts (individual) Individual Contribution - Go to Insights to see additions and deletions
-
+API calls and response: https://github.com/SpelmanMorehouse-472-2017/spelman-472-2017-1/blob/master/Defining%20Service%20API
