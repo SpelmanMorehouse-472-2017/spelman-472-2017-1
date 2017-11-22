@@ -1,17 +1,22 @@
 package com.google.training.helloworld;
 
+
+import com.google.cloud.bigquery.BigQuery.TableField;
 import com.google.api.server.spi.config.Api;
 import com.google.api.server.spi.config.ApiMethod;
 import com.google.api.server.spi.config.ApiMethod.HttpMethod;
 import com.google.api.server.spi.config.Named;
-
-
-
+import com.google.cloud.bigquery.*;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.Dataset;
 import com.google.cloud.bigquery.DatasetInfo;
+import java.util.List;
+import java.util.UUID;
+import java.util.*;
+import java.io.*;
 
+import java.lang.*;
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
@@ -28,65 +33,83 @@ import com.google.cloud.bigquery.JobInfo;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryResponse;
 import com.google.cloud.bigquery.QueryResult;
-import com.google.cloud.bigquery.TableId;
-
-import java.io.IOException;
-import java.util.List;
 import java.util.UUID;
-import java.util.concurrent.TimeoutException;
 
 
 /**
  * Defines endpoint functions APIs.
  */
-@Api(
-    name = "helloworldendpoints", 
-    version = "v1",
-    scopes = {Constants.EMAIL_SCOPE },
-    clientIds = {Constants.WEB_CLIENT_ID, Constants.API_EXPLORER_CLIENT_ID },
-    description = "API for hello world endpoints."
-    )
+@Api(name = "helloworldendpoints", version = "v1",
+scopes = {Constants.EMAIL_SCOPE },
+        clientIds = {Constants.WEB_CLIENT_ID, Constants.API_EXPLORER_CLIENT_ID },
+        description = "API for hello world endpoints.")
+
 public class HelloWorldEndpoints {
 
-   // Make this method available externally through Endpoints
-    @ApiMethod(name = "sayHello", path = "sayHello", httpMethod = HttpMethod.GET)
-    public HelloClass sayHello() {
-        return new HelloClass();
-    }
+    // Declare this method as a method available externally through Endpoints
+   // @ApiMethod(name = "sayHello", path = "sayHello",
+    //        httpMethod = HttpMethod.GET)
 
-    // Make this method available externally through Endpoints
-    @ApiMethod(name = "sayHelloByName", path = "sayHelloByName", httpMethod = HttpMethod.GET)
-    public HelloClass sayHelloByName (@Named("name") String name) {
-        return new HelloClass(name);
-    }
+  //  public HelloClass sayHello() {
+   //     return new HelloClass("University of Chicago");
+   // }
 
-    // Make this method available externally through Endpoints
-    @ApiMethod(name = "greetByPeriod", path = "greetByPeriod", httpMethod = HttpMethod.GET)
-    public HelloClass greetByPeriod (@Named("name") String name, @Named("period") String period) {
-        return new HelloClass(name, period);
-    }
+    // Declare this method as a method available externally through Endpoints
+    @ApiMethod(name = "sayHelloByName", path = "sayHelloByName",
+            httpMethod = HttpMethod.GET)
 
-    @ApiMethod(name = "sayHelloByNames", path = "sayHelloByNames", httpMethod = HttpMethod.GET)
-    public HelloClass sayHelloByName_1() {
+    public HelloClass sayHelloByName(@Named("loc") String loc, @Named("sal") String sals, @Named("schoolTypes") String schoolTypes) throws InterruptedException {
+
+        loc.toLowerCase();
+
+        sals.toLowerCase();
+        schoolTypes.toLowerCase();
+        ArrayList<String> array = new ArrayList<String>();
+        ArrayList<String> descriptionList = new ArrayList<String>();
+        /*
+       if(loc != "northeastern" || loc != "southern" || loc != "midwestern" || loc != "western" || loc != "california")
+        {
+            array.add("Invalid entries");
+            return new HelloClass(array);
+        }
+
+        if (schoolTypes != "engineering" || schoolTypes != "liberal arts" || schoolTypes != "party" || schoolTypes != "ivy leage" || schoolTypes != "state")
+        {
+
+        array.add("Invalid entries");
+            return new HelloClass(array);
+        }
+        int sizes = Integer.parseInt(schoolTypes);
+       if(sizes > 70000)
+       {
+           array.add("Salary is too high");
+           return new HelloClass(array);
+       }
+*/
+
         BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
         QueryJobConfiguration queryConfig =
                 QueryJobConfiguration.newBuilder(
                         "SELECT "
-                                + "StartingSalary FROM [spelman-472-2017-1:degreesthatpayback.DegreeList] WHERE StartingSalary = 35600 LIMIT 1000;")
+                                + "SchoolName FROM [spelman-472-2017-1:degreesthatpayback.SalariesbyCollegeType] WHERE StartingSalary > 30000;").setUseLegacySql(true)
+                        .build();
                         // Use standard SQL syntax for queries.
                         // See: https://cloud.google.com/bigquery/sql-reference/
-                        .setUseLegacySql(false)
-                        .build();
+
 
         // Create a job ID so that we can safely retry.
         JobId jobId = JobId.of(UUID.randomUUID().toString());
         Job queryJob = bigquery.create(JobInfo.newBuilder(queryConfig).setJobId(jobId).build());
-try {
+
+
+            queryJob = queryJob.waitFor();
+
+        //try {
 // Wait for the query to complete.
-    queryJob = queryJob.waitFor();
-} catch (InterruptedException e) {
-    return new HelloClass();
-}
+         //       queryJob = queryJob.waitFor();
+         //  } catch (InterruptedException e) {
+         //     return new HelloClass("error");
+      //     }
 
 
 // Check for errors
@@ -103,34 +126,52 @@ try {
 
         QueryResult result = response.getResult();
 
-// Print all pages of the results.
-        /*
+
+
+        ArrayList<String> arrays = new ArrayList<String>();
+
+
+/*
         while (result != null) {
             for (List<FieldValue> row : result.iterateAll()) {
-                List<FieldValue> titles = row.get(0).getRepeatedValue();
-                System.out.println("titles:");
+                List<FieldValue> values = row.get(0).getRepeatedValue();
+              //  System.out.println("titles:");
 
-                for (FieldValue titleValue : titles) {
+                for (FieldValue titleValue : values) {
                     List<FieldValue> titleRecord = titleValue.getRecordValue();
-                    String title = titleRecord.get(0).getStringValue();
-                    long uniqueWords = titleRecord.get(1).getLongValue();
-                    System.out.printf("\t%s: %d\n", title, uniqueWords);
+                    String value = titleRecord.get(0).getStringValue();
+                    arrays.add(value);
+                   // long uniqueWords = titleRecord.get(1).getLongValue();
+                  //  System.out.printf("\t%s: %d\n", title, uniqueWords);
                 }
 
-                long uniqueWords = row.get(1).getLongValue();
-                System.out.printf("total unique words: %d\n", uniqueWords);
+               // long uniqueWords = row.get(1).getLongValue();
+              //  System.out.printf("total unique words: %d\n", uniqueWords);
             }
 
             result = result.getNextPage();
-
         }
-*/
-        String temp = result.toString();;
+        */
 
-            return new HelloClass(temp);
+        ArrayList<String> breakfast = new ArrayList<>();
+        while(result != null)
+        {
+            for(List<FieldValue> row : result.iterateAll())
+            {
+                breakfast.add(row.get(0).getStringValue());
+            }
+            result = result.getNextPage();
+        }
+
+
+
+
+        return new HelloClass(breakfast);
+
+
     }
 
 
 
-}
 
+}

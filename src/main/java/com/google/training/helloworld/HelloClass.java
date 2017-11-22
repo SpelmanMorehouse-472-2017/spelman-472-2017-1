@@ -1,20 +1,27 @@
 package com.google.training.helloworld;
 
+import java.util.ArrayList;
+
 public class HelloClass {
-    public String message = "Hello Endpoints";
+  //  public String message = "Economics";
+    public ArrayList<String> message = new ArrayList<>();
+    public int size = 0;
 
-    public HelloClass () {
+
+    public HelloClass(ArrayList<String> name) {
+        this.message = name;
+        this.size = name.size();
+    }
+    public HelloClass() {
+        ArrayList<String> array = new ArrayList<>();
+        String name = "Enter in text fields";
+        array.add(name);
+        this.message = array;
+        this.size = array.size();
     }
 
-    public HelloClass (String name) {
-        message = name;
-    }
-  
-    public HelloClass(String name, String period ) {
-        message = "Good " + period + " " + name;
-    }
-
-    public String getMessage() {
+    public ArrayList<String> getMessage() {
         return message;
     }
+
 }
