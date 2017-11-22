@@ -3,7 +3,7 @@ Title: Where It Pays To Go To College
 
 Authors: Deja Bond, Demetrius King, Julian Hutson, Andrea Richmond
 
-Stakeholders: Deja Bond (Program Manager), Demetrius King(Hacker), Andrea Richmond (UI developer),Julian Hutson (Test Manager), ALL(Java Programmer)
+Stakeholders: Deja Bond (Program Manager), Demetrius King(Java Programmer), Andrea Richmond (UI developer),Julian Hutson (Test Manager)
 
 Project Purpose and Scope:
 The purpose of this project is to provide high school seniors with with a mobile application in which they can learn about which degree or institution will be the financially most rewarding.
