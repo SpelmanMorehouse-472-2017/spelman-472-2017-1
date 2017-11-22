@@ -1,0 +1,31 @@
+
+The UI Developer and the Test Manager will be responsible for verifying that all code is unit tested. Unit tests will be verified after implementation for a test case seems to be covered.
+
+Test Cases:
+
+- Negative values entered
+- No txt entered
+- No matching txt given options
+- Long input that exceeds limit capacity
+- Non alphabetic characters
+
+
+
+Update Date	Update Description					    Updated By
+11.19.2017	Updated Test Case #1. Checked for user input in txt field   Deja
+11.19.2017	Verified that txt entered was one of the given options      Demetrius
+11.19.2017      Verified that the inputed string is not too long            Demetrius
+11.19.2017	Updated previous test to make sure int values are in range  Demetrius
+11.20.2017      Verified that if user entered a non-valid response there    Demetrius
+		is an error message
+11.20.2017      Updated the test to make sure that if there are no query    Demetrius
+		results, we display “No matching results”
+11.20.2017	Added verification for negative values entered 		    Demetrius
+
+
+In order to make the client accessible to the java code, we will use public variables and import the package from the js file to the endpoints java file.
+
+In testing the service we will verify that the service provides a significant assort of schools from which to give recommendations from. We will verify this by testing several different test inputs for a recommendation. The UI Developer and the Test Manager will verify that the service is sufficient and this will occur when an api method is made for a particular query.
+
+How will integration points be tested?  How will you make sure the java code can talk to the database?  How will you make sure the client can talk to the java code?
+What functionality of the service as a whole will you verify?  How will you verify it?  Who will do the verification?  How often?
