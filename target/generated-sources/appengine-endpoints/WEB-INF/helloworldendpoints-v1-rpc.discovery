@@ -1,6 +1,6 @@
 {
  "kind": "discovery#rpcDescription",
- "etag": "\"RnkXbyw9us4_w3H-FU6An0C4oYs/hQpR5B1EUcnmv45RQD0FNiF1jJo\"",
+ "etag": "\"RnkXbyw9us4_w3H-FU6An0C4oYs/h9DhKWUPEnlj9kV0SwIKCTA6MJE\"",
  "discoveryVersion": "v1",
  "id": "helloworldendpoints:v1",
  "name": "helloworldendpoints",
@@ -87,6 +87,16 @@
   }
  },
  "methods": {
+  "helloworldendpoints.sayHello": {
+   "id": "helloworldendpoints.sayHello",
+   "allowGet": true,
+   "returns": {
+    "$ref": "HelloClass"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
   "helloworldendpoints.sayHelloByName": {
    "id": "helloworldendpoints.sayHelloByName",
    "allowGet": true,

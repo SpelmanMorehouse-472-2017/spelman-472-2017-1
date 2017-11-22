@@ -74,35 +74,70 @@ function greetGenerically () {
  * Illustrates calling an endpoints function that takes an argument.
  */
 function greetByName () {
-	// Get the name from the name_field element
-	//var name = "dog";
-	
-	// Call the sayHelloByName() function.
-	// It takes one argument "name"
-	// On success, pass the response to sayHelloCallback()
-	//greetGenerically();
-    //var link = document.getElementById('div');
-    //link.style.display = 'none'; //or
-   // showOne(result);​
-        var loc;
+
+      var loc;
         var sal;
         var schoolTypes;
         var request;
-        loc = document.getElementById("loc");
-        sal = document.getElementById("sal");
-        schoolTypes = document.getElementById("schoolTypes");
+        request = gapi.client.helloworldendpoints.sayHello();
+        loc = document.getElementById("loc").value;
+        sal = document.getElementById("sal").value;
+        schoolTypes = document.getElementById("schoolTypes").value;
+
         if(loc == "" || sal == "" || schoolTypes == "")
         {
-       request = gapi.client.helloworldendpoints.sayHello();
+            alert("Enter an appropriate response in every field!");
         }
+         else if(_.contains(['Northeastern', 'Southern', 'Midwestern', 'Western', 'California']) && _.contains(['Engineering', 'Liberal Arts', 'Party', 'Ivy League', 'State'])
+                {
+                            request = gapi.client.helloworldendpoints.sayHelloByName({'loc': loc, 'sal': sal, 'schoolTypes': schoolTypes});
+                }
+
         else
         {
 
+	  //  request = gapi.client.helloworldendpoints.sayHelloByName({'loc': loc, 'sal': sal, 'schoolTypes': schoolTypes});
+	    alert("Please enter all valid options (case sensitive)");
+	}
+
+
+	request.execute(sayHelloCallback);
+/*
+ var loc;
+        var sal;
+        var schoolTypes;
+        var request;
+        loc = document.getElementById("loc").value;
+        sal = document.getElementById("sal").value;
+        schoolTypes = document.getElementById("schoolTypes").value;
+        if(loc == "" || sal == "" || schoolTypes == "")
+        {
+        alert("Please enter all valid options");
+       request = gapi.client.helloworldendpoints.sayHello();
+        }
+        /*
+        loc = loc.toLowerCase():
+        schoolTypes = schoolTypes.toLowerCase();
+        else if(loc != "northeastern" && loc != "southern" && loc != "midwestern" && loc != "western" && loc != "california")
+        {
+                    alert("Please enter all valid options");
+        }
+        else if (schoolTypes != "engineering" && schoolTypes != "liberal arts" && schoolTypes != "party" && schoolTypes != "ivy league" && schoolTypes != "state")
+        {
+
+                  alert("Please enter all valid options");
+        }
+
+        else
+        {
+        loc = loc.substring(0, 1).toUpperCase() + loc.substring(1);
+        schoolTypes = schoolTypes.substring(0, 1).toUpperCase() + schoolTypes.substring(1);
 	    request = gapi.client.helloworldendpoints.sayHelloByName({'loc': loc, 'sal': sal, 'schoolTypes': schoolTypes});
 	}
 
 
 	request.execute(sayHelloCallback);
+	*/
 }
 
 
@@ -114,9 +149,10 @@ function greetByName () {
 // displaying the value of the message field in the response
 function sayHelloCallback (response) {
 
+ //var new_tbody = document.createElement('wheel');
+ // populate_with_new_rows(new_tbody);
+ // old_tbody.parentNode.replaceChild(new_tbody, table);
 
-
-//window.alert(response.message);
    var table = document.getElementById("wheel");
 
    for(i = 0; i < response.message.length; i++)
@@ -128,6 +164,28 @@ function sayHelloCallback (response) {
 
 	//alert(response.message);
 }
+/*
+
+//window.alert(response.message);
+     var table = document.getElementById("wheel");
+     document.getElementById("wheels").style.display = 'none';
+      if(response.message.length == 0)
+      {
+      response.message = "No results";
+      var row = table.insertRow(0);
+      var cell = row.insertCell(0);
+      cell.innerHTML = response.message;
+      }
+     for(i = 0; i < response.message.length; i++)
+     {
+          var row = table.insertRow(0);
+          var cell = row.insertCell(0);
+          cell.innerHTML = response["message"][i];
+     }
+
+  	//alert(response.message);
+  }
+  */
 /*
 function showOne(id) {
     $('.hide').not('#' + id).hide();

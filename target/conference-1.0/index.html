@@ -156,8 +156,9 @@
 <!-- Salaries Container -->
 <div class="w3-container w3-padding-64 w3-center" id="salaries">
     <h2>View Colleges</h2>
+    <body>Results will show here (loading may take a while...)</body>
     <div align="center"><table id="wheel" align="center"></table>
-        <p id="wheels"><i class="fa fa-spinner w3-spin" style="font-size:64px"></i></p>
+
     </div>
     <!-- Search Row -->
     <div class="w3-row-padding w3-center w3-padding-64" id="search">
@@ -185,12 +186,12 @@
 
                         Select your preferred geographical location: <br>
                         Type Northeastern, Southern, Midwestern, Western, California: <br>
-                        <input type="text" name="area" id="schoolTypes" value="" required>
+                        <input type="text" name="schoolTypes" id="schoolTypes" value="" required>
                         <br><br>
 
                         Select School Type: <br>
                         Type Engineering, Liberal Arts, Party, Ivy League,or State: <br>
-                        <input type="text" name="schooltype" id= "loc" value="" required>
+                        <input type="text" name="location" id= "loc" value="" required>
                         <br><br>
 
                         Type Salary Range <br>
@@ -200,7 +201,7 @@
 
 
 
-                        <P><input id="input_greet_name" type="button" value="Kit"
+                        <P><input id="input_greet_name" type="button" value="Please Wait..."
                                     onclick="will_be_set_after_endpoints_apis_loaded"></P>
                     </form>
 

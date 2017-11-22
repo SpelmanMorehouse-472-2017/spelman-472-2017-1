@@ -47,54 +47,45 @@ scopes = {Constants.EMAIL_SCOPE },
 public class HelloWorldEndpoints {
 
     // Declare this method as a method available externally through Endpoints
-   // @ApiMethod(name = "sayHello", path = "sayHello",
-    //        httpMethod = HttpMethod.GET)
+    @ApiMethod(name = "sayHello", path = "sayHello",
+            httpMethod = HttpMethod.GET)
 
-  //  public HelloClass sayHello() {
-   //     return new HelloClass("University of Chicago");
-   // }
+    public HelloClass sayHello() {
+        ArrayList<String> descriptionList = new ArrayList<String>();
+        descriptionList.add("No results found");
+        return new HelloClass(descriptionList);
+    }
 
     // Declare this method as a method available externally through Endpoints
     @ApiMethod(name = "sayHelloByName", path = "sayHelloByName",
             httpMethod = HttpMethod.GET)
 
-    public HelloClass sayHelloByName(@Named("loc") String loc, @Named("sal") String sals, @Named("schoolTypes") String schoolTypes) throws InterruptedException {
+    public HelloClass sayHelloByName(@Named("loc") String loc, @Named("sal") String sal, @Named("schoolTypes") String schoolTypes) throws InterruptedException {
 
-        loc.toLowerCase();
+       // loc = loc.toLowerCase();
 
-        sals.toLowerCase();
-        schoolTypes.toLowerCase();
+        //sals.toLowerCase();
+        //schoolTypes = schoolTypes.toLowerCase();
         ArrayList<String> array = new ArrayList<String>();
         ArrayList<String> descriptionList = new ArrayList<String>();
-        /*
-       if(loc != "northeastern" || loc != "southern" || loc != "midwestern" || loc != "western" || loc != "california")
-        {
-            array.add("Invalid entries");
-            return new HelloClass(array);
-        }
 
-        if (schoolTypes != "engineering" || schoolTypes != "liberal arts" || schoolTypes != "party" || schoolTypes != "ivy leage" || schoolTypes != "state")
-        {
 
-        array.add("Invalid entries");
-            return new HelloClass(array);
+        ArrayList<String> breakfast = new ArrayList<>();
+
+        if(sal != null && !sal.matches("[-+]?\\d*\\.?\\d+"))
+        {
+            String temp = "Please enter a number for salary";
+            return new HelloClass(temp);
         }
-        int sizes = Integer.parseInt(schoolTypes);
-       if(sizes > 70000)
-       {
-           array.add("Salary is too high");
-           return new HelloClass(array);
-       }
-*/
 
         BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
         QueryJobConfiguration queryConfig =
                 QueryJobConfiguration.newBuilder(
                         "SELECT "
-                                + "SchoolName FROM [spelman-472-2017-1:degreesthatpayback.SalariesbyCollegeType] WHERE StartingSalary > 30000;").setUseLegacySql(true)
+                                + "SchoolName FROM [spelman-472-2017-1:degreesthatpayback.MegreSalaries] WHERE StartingSalary > " + sal + "AND SchoolType = " + schoolTypes + ";").setUseLegacySql(true)
                         .build();
-                        // Use standard SQL syntax for queries.
-                        // See: https://cloud.google.com/bigquery/sql-reference/
+        // Use standard SQL syntax for queries.
+        // See: https://cloud.google.com/bigquery/sql-reference/
 
 
         // Create a job ID so that we can safely retry.
@@ -102,8 +93,7 @@ public class HelloWorldEndpoints {
         Job queryJob = bigquery.create(JobInfo.newBuilder(queryConfig).setJobId(jobId).build());
 
 
-            queryJob = queryJob.waitFor();
-
+        queryJob = queryJob.waitFor();
         //try {
 // Wait for the query to complete.
          //       queryJob = queryJob.waitFor();
@@ -153,7 +143,7 @@ public class HelloWorldEndpoints {
         }
         */
 
-        ArrayList<String> breakfast = new ArrayList<>();
+        //ArrayList<String> breakfast = new ArrayList<>();
         while(result != null)
         {
             for(List<FieldValue> row : result.iterateAll())
