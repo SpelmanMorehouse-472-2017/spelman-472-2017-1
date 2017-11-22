@@ -12,7 +12,7 @@ Test Cases:
 
 
 Update Date	Update Description					    Updated By
-11.19.2017	Updated Test Case #1. Checked for user input in txt field   Deja
+11.18.2017	Updated Test Case #1. Checked for user input in txt field   Deja
 11.19.2017	Verified that txt entered was one of the given options      Demetrius
 11.19.2017      Verified that the inputed string is not too long            Demetrius
 11.19.2017	Updated previous test to make sure int values are in range  Demetrius
@@ -25,7 +25,11 @@ Update Date	Update Description					    Updated By
 
 In order to make the client accessible to the java code, we will use public variables and import the package from the js file to the endpoints java file.
 
-In testing the service we will verify that the service provides a significant assort of schools from which to give recommendations from. We will verify this by testing several different test inputs for a recommendation. The UI Developer and the Test Manager will verify that the service is sufficient and this will occur when an api method is made for a particular query.
+In testing the service we will verify that the service provides a significant assortment of schools from which to give recommendations from. We will verify this by testing several different test inputs for a recommendation. 
+
+The UI Developer and the Test Manager will verify that the service is sufficient and this will occur when an api method is made for a particular query.
+
+As a whole the service should display a list of schools based on the given inputs and users should also be able to make comments.
 
 How will integration points be tested?  How will you make sure the java code can talk to the database?  How will you make sure the client can talk to the java code?
 What functionality of the service as a whole will you verify?  How will you verify it?  Who will do the verification?  How often?
